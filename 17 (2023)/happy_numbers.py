@@ -19,7 +19,9 @@ inp = input().split(' ')
 a = int(inp[0])
 b = int(inp[1])
 
-bonus = True
+bonus = False
+if compute_square_digit_sum(b) in happy:
+    bonus = True
 
 if a == b:
     if compute_square_digit_sum(a) in happy:
@@ -42,11 +44,6 @@ while True:
         upper_digits.append(b % 10)
         b //= 10
     else:
-        break
-
-for index in range(1, len(upper_digits)):
-    if upper_digits[index] != 0:
-        bonus = False
         break
 
 upper_digits = upper_digits[::-1]
